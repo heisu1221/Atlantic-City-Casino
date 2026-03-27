@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Administrador - Atlantic City</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <button class="logo-btn" onclick="window.location.href='admin.html'">
+      <h2>Atlantic City</h2>
+    </button>
+  </div>
+  <div class="nav-btns">
+    <button class="btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
+  </div>
+</nav>
+
+<main>
+  <div class="admin-wrap">
+
+    <div class="admin-header">
+      <div>
+        <h2>Clientes Registrados</h2>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:4px;">Vista general de todos los usuarios del sistema</p>
+      </div>
+      <span class="admin-stats" id="contador">0 clientes</span>
+    </div>
+
+    <div class="card" style="padding:0;overflow:hidden;">
+      <div class="table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>DNI</th>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Teléfono</th>
+              <th>Correo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- MODAL EDITAR -->
+<div class="modal-overlay" id="modalEditar">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Editar Cliente</h3>
+      <button class="modal-close" onclick="cerrarModal('modalEditar')">×</button>
+    </div>
+    <div class="row">
+      <div class="input-group">
+        <label>DNI</label>
+        <input type="text" id="editDni" class="input-readonly" readonly>
+      </div>
+      <div class="input-group">
+        <label>Edad</label>
+        <input type="number" id="editEdad">
+      </div>
+    </div>
+    <div class="input-group">
+      <label>Nombre completo</label>
+      <input type="text" id="editNombre">
+    </div>
+    <div class="row">
+      <div class="input-group">
+        <label>Teléfono</label>
+        <input type="text" id="editTelefono">
+      </div>
+      <div class="input-group">
+        <label>Correo</label>
+        <input type="email" id="editCorreo">
+      </div>
+    </div>
+    <div id="editError" style="display:none;color:#e05555;font-size:13px;margin-top:4px;"></div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="cerrarModal('modalEditar')">Cancelar</button>
+      <button class="btn-primary"   onclick="guardarEdicion()">Guardar cambios</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL QUEJA -->
+<div class="modal-overlay" id="modalQueja">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Registrar Queja</h3>
+      <button class="modal-close" onclick="cerrarModal('modalQueja')">×</button>
+    </div>
+    <div class="input-group">
+      <label>Cliente</label>
+      <input type="text" id="quejaCliente" class="input-readonly" readonly>
+    </div>
+    <div class="input-group">
+      <label>Motivo <span style="color:var(--gold)">*</span></label>
+      <input type="text" id="quejaMotivo" placeholder="Motivo principal de la queja">
+    </div>
+    <div class="input-group">
+      <label>Descripción</label>
+      <textarea id="quejaDescripcion" placeholder="Detalles adicionales (opcional)"></textarea>
+    </div>
+    <div id="quejaError" style="display:none;color:#e05555;font-size:13px;margin-top:4px;"></div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="cerrarModal('modalQueja')">Cancelar</button>
+      <button class="btn-primary"   onclick="guardarQueja()">Registrar queja</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>© 2026 Atlantic City — Panel de Administración</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

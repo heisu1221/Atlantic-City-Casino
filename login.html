@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión - Atlantic City</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <button class="logo-btn" onclick="window.location.href='index.html'">
+      <h2>Atlantic City</h2>
+    </button>
+  </div>
+  <div class="nav-btns">
+    <a href="registro.html" class="btn-nav-register">Registrarse</a>
+    <a href="login.html"    class="btn-nav-login">Iniciar Sesión</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-overlay" style="position:fixed;inset:0;z-index:-1;background:linear-gradient(rgba(0,0,0,0.82),rgba(0,0,0,0.92));"></div>
+  <div class="card" style="width:420px;max-width:95vw;">
+    <h2 style="text-align:center;margin-bottom:8px;">Iniciar Sesión</h2>
+    <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-bottom:24px;">Ingresa con tu correo y contraseña</p>
+    <form id="loginForm">
+      <div class="input-group">
+        <label>Correo electrónico</label>
+        <input type="text" id="usuario" placeholder="correo@ejemplo.com" required>
+      </div>
+      <div class="input-group">
+        <label>Contraseña</label>
+        <input type="password" id="clave" placeholder="••••••••" required>
+      </div>
+      <div id="loginError" style="display:none;color:#e05555;font-size:13px;margin-bottom:12px;text-align:center;"></div>
+      <button type="submit" class="btn-primary" style="width:100%;padding:12px;font-size:14px;margin-top:4px;">Ingresar</button>
+    </form>
+    <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:18px;">
+      ¿No tienes cuenta? <a href="registro.html" style="color:var(--gold);text-decoration:none;">Regístrate aquí</a>
+    </p>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

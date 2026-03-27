@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Atlantic City — Casino</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="logo">
+    <button class="logo-btn" onclick="window.location.href='paginaprincipalcliente.html'">
+      <h2>Atlantic City</h2>
+    </button>
+  </div>
+  <div class="nav-btns">
+    <div class="user-menu" id="userMenu">
+      <button class="user-trigger" id="userTrigger">
+        <span class="user-avatar">♠</span>
+        <span id="userDisplayName">Usuario</span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="user-dropdown">
+        <div class="dropdown-info">
+          <span>Conectado como</span>
+          <strong id="userFullName">—</strong>
+        </div>
+        <div class="dropdown-divider"></div>
+        <button class="dropdown-item" onclick="cerrarSesionCliente()">
+          <span class="dropdown-icon">⎋</span> Cerrar sesión
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO BANNER ===== -->
+<section class="casino-hero">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="img/back.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="casino-hero-content">
+    <p class="hero-subtitle">Bienvenido de vuelta,</p>
+    <h1 id="welcomeMsg">Jugador</h1>
+    <p class="hero-desc">Tu suerte comienza aquí. Elige tu juego y apuesta con estilo.</p>
+    <a href="#juegos" class="btn-hero">Ver juegos ↓</a>
+  </div>
+</section>
+
+<!-- ===== SECCIÓN DE JUEGOS ===== -->
+<section class="games-section" id="juegos">
+  <div class="games-container">
+    <div class="section-header">
+      <h2 class="section-title">Nuestros Juegos</h2>
+      <p class="section-sub">Selecciona una mesa y comienza a jugar</p>
+    </div>
+
+    <div class="games-grid">
+
+      <!-- Ruleta -->
+      <div class="game-card" onclick="abrirJuego('Ruleta')">
+        <div class="game-icon">🎡</div>
+        <div class="game-badge">En vivo</div>
+        <h3 class="game-name">Ruleta</h3>
+        <p class="game-desc">Apuesta al número, color o sección que elijas. La bola decide tu destino.</p>
+        <div class="game-meta">
+          <span>Apuesta mín: <strong>S/ 10</strong></span>
+          <span class="game-players">● 4 jugando</span>
+        </div>
+        <button class="btn-game">Jugar ahora</button>
+      </div>
+
+      <!-- Blackjack -->
+      <div class="game-card" onclick="abrirJuego('Blackjack')">
+        <div class="game-icon">🃏</div>
+        <div class="game-badge badge-hot">Popular</div>
+        <h3 class="game-name">Blackjack</h3>
+        <p class="game-desc">Llega al 21 antes que el crupier sin pasarte. Estrategia y sangre fría.</p>
+        <div class="game-meta">
+          <span>Apuesta mín: <strong>S/ 20</strong></span>
+          <span class="game-players">● 7 jugando</span>
+        </div>
+        <button class="btn-game">Jugar ahora</button>
+      </div>
+
+      <!-- Tragamonedas -->
+      <div class="game-card" onclick="abrirJuego('Tragamonedas')">
+        <div class="game-icon">🎰</div>
+        <div class="game-badge badge-new">Nuevo</div>
+        <h3 class="game-name">Tragamonedas</h3>
+        <p class="game-desc">Gira los rodillos y espera que los símbolos se alineen a tu favor.</p>
+        <div class="game-meta">
+          <span>Apuesta mín: <strong>S/ 5</strong></span>
+          <span class="game-players">● 12 jugando</span>
+        </div>
+        <button class="btn-game">Jugar ahora</button>
+      </div>
+
+      <!-- Póker -->
+      <div class="game-card" onclick="abrirJuego('Poker Texas Holdem')">
+        <div class="game-icon">♠</div>
+        <div class="game-badge">Mesa VIP</div>
+        <h3 class="game-name">Póker Texas</h3>
+        <p class="game-desc">La mejor mano gana. Blufea, sube las apuestas y domina la mesa.</p>
+        <div class="game-meta">
+          <span>Apuesta mín: <strong>S/ 50</strong></span>
+          <span class="game-players">● 3 jugando</span>
+        </div>
+        <button class="btn-game">Jugar ahora</button>
+      </div>
+
+      <!-- Baccarat -->
+      <div class="game-card" onclick="abrirJuego('Baccarat')">
+        <div class="game-icon">🎴</div>
+        <div class="game-badge">Clásico</div>
+        <h3 class="game-name">Baccarat</h3>
+        <p class="game-desc">Apuesta al Jugador, a la Banca o al Empate. Simple, elegante y emocionante.</p>
+        <div class="game-meta">
+          <span>Apuesta mín: <strong>S/ 30</strong></span>
+          <span class="game-players">● 2 jugando</span>
+        </div>
+        <button class="btn-game">Jugar ahora</button>
+      </div>
+
+      <!-- Dados -->
+      <div class="game-card" onclick="abrirJuego('Craps - Dados')">
+        <div class="game-icon">🎲</div>
+        <div class="game-badge badge-hot">Caliente</div>
+        <h3 class="game-name">Craps — Dados</h3>
+        <p class="game-desc">Lanza los dados y apuesta a los resultados. Alto riesgo, alta recompensa.</p>
+        <div class="game-meta">
+          <span>Apuesta mín: <strong>S/ 15</strong></span>
+          <span class="game-players">● 5 jugando</span>
+        </div>
+        <button class="btn-game">Jugar ahora</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODAL PRÓXIMAMENTE ===== -->
+<div class="modal-overlay" id="modalJuego">
+  <div class="modal" style="text-align:center;">
+    <div style="font-size:60px;margin-bottom:16px;" id="modalIcon">🎰</div>
+    <h3 style="color:var(--gold);font-size:22px;margin-bottom:10px;" id="modalJuegoNombre">Juego</h3>
+    <p style="color:var(--text-muted);font-size:14px;margin-bottom:24px;">
+      Esta mesa está siendo preparada para ti.<br>
+      Muy pronto podrás jugar en línea.
+    </p>
+    <button class="btn-primary" style="padding:11px 30px;" onclick="cerrarModal('modalJuego')">Entendido</button>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p style="color:var(--text-muted);font-size:12px;margin-bottom:4px;">Juega con responsabilidad. Solo mayores de 18 años.</p>
+  <p>© 2026 Atlantic City — Todos los derechos reservados</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  const iconosPorJuego = {
+    "Ruleta": "🎡",
+    "Blackjack": "🃏",
+    "Tragamonedas": "🎰",
+    "Poker Texas Holdem": "♠",
+    "Baccarat": "🎴",
+    "Craps - Dados": "🎲"
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const data = sessionStorage.getItem("clienteLogged");
+    if (!data) { window.location.href = "login.html"; return; }
+
+    const c         = JSON.parse(data);
+    const firstName = c.nombre.split(" ")[0];
+
+    document.getElementById("userDisplayName").textContent = firstName;
+    document.getElementById("userFullName").textContent    = c.nombre;
+    document.getElementById("welcomeMsg").textContent      = firstName;
+
+    document.getElementById("userTrigger").addEventListener("click", function (e) {
+      e.stopPropagation();
+      document.getElementById("userMenu").classList.toggle("open");
+    });
+
+    document.addEventListener("click", function () {
+      document.getElementById("userMenu").classList.remove("open");
+    });
+  });
+
+  function cerrarSesionCliente() {
+    sessionStorage.removeItem("clienteLogged");
+    window.location.href = "index.html";
+  }
+
+  function abrirJuego(nombre) {
+    document.getElementById("modalJuegoNombre").textContent = nombre;
+    document.getElementById("modalIcon").textContent = iconosPorJuego[nombre] || "🎰";
+    document.getElementById("modalJuego").classList.add("active");
+  }
+
+  document.querySelectorAll(".modal-overlay").forEach(function(overlay) {
+    overlay.addEventListener("click", function(e) {
+      if (e.target === overlay) cerrarModal(overlay.id);
+    });
+  });
+</script>
+</body>
+</html>
