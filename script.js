@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // =============================================
-  //  LOGIN — admin y cliente
-  // =============================================
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
     loginForm.addEventListener("submit", function (e) {
@@ -13,14 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const loginError = document.getElementById("loginError");
       loginError.style.display = "none";
 
-      // Admin
       if (usuario === "admin" && clave === "1234expo") {
         sessionStorage.setItem("adminLogged", "true");
         window.location.href = "admin.html";
         return;
       }
 
-      // Cliente — correo + contraseña
       const clientes = JSON.parse(localStorage.getItem("clientes")) || [];
       const cliente  = clientes.find(c => c.correo === usuario && c.contrasena === clave);
 
@@ -34,9 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // =============================================
-  //  REGISTRO DE CLIENTE
-  // =============================================
   const registroForm = document.getElementById("registroForm");
   if (registroForm) {
     registroForm.addEventListener("submit", function (e) {
@@ -119,9 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // =============================================
-  //  ADMIN DASHBOARD — protección + render
-  // =============================================
   const tablaBody = document.getElementById("tablaBody");
   if (tablaBody) {
     if (sessionStorage.getItem("adminLogged") !== "true") {
@@ -131,9 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
     renderTabla();
   }
 
-  // =============================================
-  //  HELPERS
-  // =============================================
   function marcarError(input) {
     input.style.border    = "2px solid #e05555";
     input.style.boxShadow = "0 0 5px rgba(224,85,85,0.3)";
@@ -146,12 +132,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-}); // end DOMContentLoaded
+});
 
-
-// =============================================
-//  ADMIN — funciones globales
-// =============================================
 let editIndex  = null;
 let quejaIndex = null;
 
@@ -200,7 +182,6 @@ function eliminarCliente(i) {
   renderTabla();
 }
 
-// --- Editar ---
 function abrirEditar(i) {
   const clientes = JSON.parse(localStorage.getItem("clientes")) || [];
   const c = clientes[i];
@@ -250,7 +231,6 @@ function guardarEdicion() {
   renderTabla();
 }
 
-// --- Quejas ---
 function abrirQueja(i) {
   const clientes = JSON.parse(localStorage.getItem("clientes")) || [];
   quejaIndex = i;
@@ -290,7 +270,6 @@ function guardarQueja() {
   cerrarModal("modalQueja");
 }
 
-// --- Modales ---
 function cerrarModal(id) {
   document.getElementById(id).classList.remove("active");
 }

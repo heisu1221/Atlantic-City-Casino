@@ -23,7 +23,6 @@ body{
   flex-direction:column;
 }
 
-/* ===== NAVBAR ===== */
 .navbar{
   position:fixed;
   width:100%;
@@ -39,7 +38,6 @@ body{
   z-index:1000;
 }
 
-/* Logo como botón */
 .logo-btn{
   background:none;
   border:none;
@@ -55,7 +53,6 @@ body{
   font-weight:700;
 }
 
-/* Botones navbar derecha */
 .nav-btns{
   display:flex;
   gap:12px;
@@ -94,7 +91,6 @@ body{
   box-shadow:0 0 14px rgba(212,175,55,0.45);
 }
 
-/* ===== USER DROPDOWN (cliente logueado) ===== */
 .user-menu{
   position:relative;
 }
@@ -190,7 +186,6 @@ body{
   color:#e05555;
 }
 
-/* ===== HERO ===== */
 .hero{
   position:relative;
   height:100vh;
@@ -246,7 +241,6 @@ body{
   box-shadow:0 0 15px rgba(212,175,55,0.5);
 }
 
-/* ===== FORMS / CARDS ===== */
 main{
   flex:1;
   padding:120px 60px 60px;
@@ -343,7 +337,6 @@ textarea{
 
 .btn-danger:hover{background:#cc2a2a;}
 
-/* ===== ADMIN TABLE ===== */
 .admin-wrap{
   max-width:1300px;
   margin:0 auto;
@@ -421,7 +414,6 @@ textarea{
   font-size:14px;
 }
 
-/* ===== MODAL ===== */
 .modal-overlay{
   display:none;
   position:fixed;
@@ -486,7 +478,6 @@ textarea{
   cursor:not-allowed;
 }
 
-/* Logout admin */
 .btn-logout{
   padding:8px 18px;
   border:1px solid #444;
@@ -504,7 +495,6 @@ textarea{
   color:var(--danger);
 }
 
-/* ===== ABOUT ===== */
 .about{
   flex:1;
   display:flex;
@@ -514,7 +504,6 @@ textarea{
   text-align:center;
 }
 
-/* ===== FOOTER ===== */
 .footer{
   background:var(--black-soft);
   color:var(--text-light);
@@ -524,15 +513,6 @@ textarea{
   margin-top:auto;
 }
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-  .navbar{padding:16px 20px;}
-  main{padding:100px 20px 40px;}
-  .admin-wrap{padding:0;}
-  .hero-content h1{font-size:36px;}
-}
-
-/* ===== CASINO HERO ===== */
 .casino-hero {
   position: relative;
   height: 100vh;
@@ -590,7 +570,6 @@ textarea{
   box-shadow: 0 0 20px rgba(212,175,55,0.45);
 }
 
-/* ===== GAMES SECTION ===== */
 .games-section {
   background: #0a0a0a;
   padding: 90px 60px 80px;
@@ -625,7 +604,6 @@ textarea{
   gap: 24px;
 }
 
-/* ===== GAME CARD ===== */
 .game-card {
   background: var(--black-soft);
   border: 1px solid rgba(212,175,55,0.12);
@@ -747,13 +725,11 @@ textarea{
   box-shadow: 0 0 12px rgba(212,175,55,0.35);
 }
 
-/* ===== USER AVATAR ===== */
 .user-avatar {
   font-size: 13px;
   color: var(--gold);
 }
 
-/* ===== DROPDOWN DIVIDER ===== */
 .dropdown-divider {
   height: 1px;
   background: #1e1e1e;
@@ -763,21 +739,26 @@ textarea{
   margin-right: 4px;
 }
 
-/* ===== RESPONSIVE GAMES ===== */
-@media (max-width: 1024px) {
-  .games-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media(max-width:1024px){
+  .games-grid{grid-template-columns:repeat(2,1fr);}
 }
 
-@media (max-width: 640px) {
-  .games-section {
-    padding: 70px 20px 60px;
-  }
-  .games-grid {
-    grid-template-columns: 1fr;
-  }
-  .casino-hero-content h1 {
-    font-size: 44px;
-  }
+@media(max-width:900px){
+  .navbar{padding:16px 20px;}
+  main{padding:100px 20px 40px;}
+  .admin-wrap{padding:0;}
+  .hero-content h1{font-size:36px;}
+}
+
+@media(max-width:640px){
+  .games-section{padding:70px 20px 60px;}
+  .games-grid{grid-template-columns:1fr;}
+  .casino-hero-content h1{font-size:44px;}
+  .row{flex-direction:column;gap:0;}
+  .navbar{flex-direction:column;gap:12px;padding:12px 20px;}
+  .nav-btns{gap:8px;}
+  .admin-header{flex-direction:column;align-items:flex-start;gap:15px;}
+  main{padding:140px 15px 30px;} 
+  .modal{padding:25px;width:100%;}
+  .table-actions{flex-direction:column;}
 }

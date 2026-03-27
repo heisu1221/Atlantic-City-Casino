@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel Administrador - Atlantic City</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-
 <nav class="navbar">
   <div class="logo">
     <button class="logo-btn" onclick="window.location.href='admin.html'">
@@ -17,10 +17,8 @@
     <button class="btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
   </div>
 </nav>
-
 <main>
   <div class="admin-wrap">
-
     <div class="admin-header">
       <div>
         <h2>Clientes Registrados</h2>
@@ -28,7 +26,6 @@
       </div>
       <span class="admin-stats" id="contador">0 clientes</span>
     </div>
-
     <div class="card" style="padding:0;overflow:hidden;">
       <div class="table-wrap">
         <table class="admin-table">
@@ -47,11 +44,8 @@
         </table>
       </div>
     </div>
-
   </div>
 </main>
-
-<!-- MODAL EDITAR -->
 <div class="modal-overlay" id="modalEditar">
   <div class="modal">
     <div class="modal-header">
@@ -89,8 +83,6 @@
     </div>
   </div>
 </div>
-
-<!-- MODAL QUEJA -->
 <div class="modal-overlay" id="modalQueja">
   <div class="modal">
     <div class="modal-header">
@@ -116,11 +108,9 @@
     </div>
   </div>
 </div>
-
 <footer class="footer">
   <p>© 2026 Atlantic City — Panel de Administración</p>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>

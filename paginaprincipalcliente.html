@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atlantic City — Casino</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
 <nav class="navbar">
   <div class="logo">
     <button class="logo-btn" onclick="window.location.href='paginaprincipalcliente.html'">
@@ -35,7 +35,6 @@
   </div>
 </nav>
 
-<!-- ===== HERO BANNER ===== -->
 <section class="casino-hero">
   <video autoplay muted loop playsinline class="bg-video">
     <source src="img/back.mp4" type="video/mp4">
@@ -49,7 +48,6 @@
   </div>
 </section>
 
-<!-- ===== SECCIÓN DE JUEGOS ===== -->
 <section class="games-section" id="juegos">
   <div class="games-container">
     <div class="section-header">
@@ -58,8 +56,6 @@
     </div>
 
     <div class="games-grid">
-
-      <!-- Ruleta -->
       <div class="game-card" onclick="abrirJuego('Ruleta')">
         <div class="game-icon">🎡</div>
         <div class="game-badge">En vivo</div>
@@ -72,7 +68,6 @@
         <button class="btn-game">Jugar ahora</button>
       </div>
 
-      <!-- Blackjack -->
       <div class="game-card" onclick="abrirJuego('Blackjack')">
         <div class="game-icon">🃏</div>
         <div class="game-badge badge-hot">Popular</div>
@@ -85,7 +80,6 @@
         <button class="btn-game">Jugar ahora</button>
       </div>
 
-      <!-- Tragamonedas -->
       <div class="game-card" onclick="abrirJuego('Tragamonedas')">
         <div class="game-icon">🎰</div>
         <div class="game-badge badge-new">Nuevo</div>
@@ -98,7 +92,6 @@
         <button class="btn-game">Jugar ahora</button>
       </div>
 
-      <!-- Póker -->
       <div class="game-card" onclick="abrirJuego('Poker Texas Holdem')">
         <div class="game-icon">♠</div>
         <div class="game-badge">Mesa VIP</div>
@@ -111,7 +104,6 @@
         <button class="btn-game">Jugar ahora</button>
       </div>
 
-      <!-- Baccarat -->
       <div class="game-card" onclick="abrirJuego('Baccarat')">
         <div class="game-icon">🎴</div>
         <div class="game-badge">Clásico</div>
@@ -124,7 +116,6 @@
         <button class="btn-game">Jugar ahora</button>
       </div>
 
-      <!-- Dados -->
       <div class="game-card" onclick="abrirJuego('Craps - Dados')">
         <div class="game-icon">🎲</div>
         <div class="game-badge badge-hot">Caliente</div>
@@ -136,12 +127,10 @@
         </div>
         <button class="btn-game">Jugar ahora</button>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ===== MODAL PRÓXIMAMENTE ===== -->
 <div class="modal-overlay" id="modalJuego">
   <div class="modal" style="text-align:center;">
     <div style="font-size:60px;margin-bottom:16px;" id="modalIcon">🎰</div>
@@ -154,7 +143,6 @@
   </div>
 </div>
 
-<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <p style="color:var(--text-muted);font-size:12px;margin-bottom:4px;">Juega con responsabilidad. Solo mayores de 18 años.</p>
   <p>© 2026 Atlantic City — Todos los derechos reservados</p>
